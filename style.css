@@ -146,9 +146,7 @@ body {
     margin-bottom: 16px;
 }
 
-.purchase-button:hover {
-    background-color: #009900;
-}
+.purchase-button:hover {}
 
 .support-button {
     width: 100%;
@@ -166,7 +164,6 @@ body {
 
 .support-button:hover { 
     color: white; 
-    background-color: #41c9b4;
 }
 
 .login-link {
@@ -212,10 +209,6 @@ body {
 
 /* レスポンシブデザイン */
 @media (max-width: 768px) {
-    .container {
-        padding: 0 16px;
-    }
-    
     .header {
         padding: 16px;
     }
