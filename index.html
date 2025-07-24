@@ -10,23 +10,19 @@
 <body>
     <div class="container">
         <!-- ヘッダー -->
-        <header class="header">
-            <div class="header-content">
-                <h1 class="site-title">採用の裏側</h1>
-                <div class="user-info">
-                    <span class="username">まる | 採用の裏側</span>
+        <div class="header">
+            <h1 class="article-title">【人事が暴露】99%の人が知らない転職の裏技</h1>
+            <div class="author-info">
+                <div class="author-avatar">ま</div>
+                <div class="author-details">
+                    <span class="author-name">まる | 採用の裏側</span>
+                    <span class="publish-date">2025年7月24日</span>
                 </div>
             </div>
-        </header>
+        </div>
 
         <!-- メイン記事 -->
         <main class="article">
-            <div class="article-header">
-                <h1 class="article-title">【人事が暴露】99%の人が知らない転職の裏技</h1>
-                <div class="article-meta">
-                    <span class="date">2025年7月24日</span>
-                </div>
-            </div>
 
             <!-- 記事内容（前半部分） -->
             <div class="article-content">
@@ -79,56 +75,43 @@
                     <p>実は、<strong>たった3つのポイント</strong>を押さえるだけで、あなたの履歴書は採用担当者の心を掴むことができるのです。</p>
                 </div>
 
-                <!-- モザイク効果部分 -->
-                <div class="content-blurred">
-                    <h2>【裏技1】履歴書の「黄金の7秒ルール」</h2>
-                    <p>人事が履歴書を見る時間は平均7秒。この7秒で印象を決める「視線誘導テクニック」があります。99%の人が知らない、履歴書レイアウトの極意をお教えします...</p>
-                    
-                    <h2>【裏技2】「経験の翻訳術」で市場価値3倍</h2>
-                    <p>同じ経験でも、書き方次第で市場価値は3倍変わります。人事が「この人欲しい！」と思う、経験の魅力的な表現方法を具体例と共に解説...</p>
-                    
-                    <h2>【裏技3】面接官の心を掴む「ストーリーテリング法」</h2>
-                    <p>面接で必ず聞かれる「転職理由」「志望動機」「自己PR」。テンプレート回答では絶対に受からない理由と、面接官が思わず前のめりになる回答パターンを公開...</p>
+                <!-- ぼかし効果部分 -->
+                <div class="blurred-content">
+                    <div class="blurred-text">
+                        <h2>【裏技1】履歴書の「黄金の7秒ルール」</h2>
+                        <p>人事が履歴書を見る時間は平均7秒。この7秒で印象を決める「視線誘導テクニック」があります。99%の人が知らない、履歴書レイアウトの極意をお教えします。</p>
+                        
+                        <h2>【裏技2】「経験の翻訳術」で市場価値3倍</h2>
+                        <p>同じ経験でも、書き方次第で市場価値は3倍変わります。人事が「この人欲しい！」と思う、経験の魅力的な表現方法を具体例と共に解説します。</p>
+                        
+                        <h2>【裏技3】面接官の心を掴む「ストーリーテリング法」</h2>
+                        <p>面接で必ず聞かれる「転職理由」「志望動機」「自己PR」。テンプレート回答では絶対に受からない理由と、面接官が思わず前のめりになる回答パターンを公開します。</p>
+                        
+                        <h2>【極秘情報】年収交渉の「心理テクニック」</h2>
+                        <p>年収交渉で失敗する人の95%は「タイミング」を間違えています。人事の心理を熟知した私だから教えられる、年収アップの最適なタイミングと交渉術をお伝えします。</p>
+                    </div>
+                    <div class="fade-overlay"></div>
                 </div>
 
                 <!-- LINE誘導セクション -->
-                <div class="line-cta-section">
-                    <div class="cta-box">
-                        <h3>続きを読むには</h3>
-                        <p>人事だから知っている転職の極秘テクニック、年収アップの交渉術、面接突破の心理学など、すべてをLINE友だち限定で完全公開！</p>
-                        
-                        <div class="line-buttons">
-                            <a href="https://line.me/R/ti/p/@883pjgjt" class="line-btn primary" target="_blank">
-                                LINEで友だち追加
-                            </a>
-                            <button class="qr-btn" onclick="toggleQR()">
-                                QRコードで追加
-                            </button>
-                        </div>
-
-                        <div class="qr-section" id="qrSection" style="display: none;">
-                            <div class="qr-placeholder">
-                                <p>QRコード</p>
-                                <div class="qr-code">
-                                    <!-- ここに実際のQRコードを配置 -->
-                                    <p>LINE ID: @883pjgjt</p>
-                                </div>
-                                <p class="qr-instruction">スマホでQRコードを読み取って友だち追加</p>
-                            </div>
-                        </div>
-
-                        <div class="benefits">
-                            <h4>LINE友だち限定特典</h4>
-                            <ul>
-                                <li>書類選考通過率95%の履歴書テンプレート</li>
-                                <li>面接突破の質問&回答集（50パターン）</li>
-                                <li>年収交渉の実践マニュアル</li>
-                                <li>業界別・職種別攻略法</li>
-                                <li>内定者の面接音声（実録）</li>
-                                <li>転職活動のスケジュール管理表</li>
-                                <li>人事が嫌がるNG行動チェックリスト</li>
-                            </ul>
-                        </div>
+                <div class="paywall">
+                    <h2 class="paywall-title">ここから先は</h2>
+                    <div class="price-info">
+                        <div class="price-note">人事が教える転職の極秘テクニック完全版</div>
+                    </div>
+                    <a href="https://line.me/R/ti/p/@883pjgjt" target="_blank">
+                        <button class="purchase-button">LINE友だち追加で読む</button>
+                    </a>
+                    <p class="login-link">友だち追加すると本編付きの記事URLが送られてきます</p>
+                    
+                    <div class="benefits-note">
+                        <p><strong>LINE友だち限定特典</strong></p>
+                        <ul>
+                            <li>• 書類選考通過率95%の履歴書テンプレート</li>
+                            <li>• 面接突破の質問&回答集（50パターン）</li>
+                            <li>• 年収交渉の実践マニュアル</li>
+                            <li>• 内定者の面接音声（実録）</li>
+                        </ul>
                     </div>
                 </div>
             </div>
