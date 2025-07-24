@@ -1,18 +1,4 @@
-// QRコード表示切り替え
-function toggleQR() {
-    const qrSection = document.getElementById('qrSection');
-    if (qrSection.style.display === 'none' || qrSection.style.display === '') {
-        qrSection.style.display = 'block';
-        // スムーズなスクロール
-        setTimeout(() => {
-            qrSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }, 100);
-    } else {
-        qrSection.style.display = 'none';
-    }
-}
-
-// スマホでのLINE直接起動
+// LINE友だち追加機能
 function openLineApp() {
     const userAgent = navigator.userAgent.toLowerCase();
     const isIOS = /iphone|ipad|ipod/.test(userAgent);
@@ -29,56 +15,37 @@ function openLineApp() {
 
 // ページ読み込み時の初期化
 document.addEventListener('DOMContentLoaded', function() {
-    // LINEボタンにクリックイベントを追加
-    const lineButtons = document.querySelectorAll('.line-btn.primary');
-    lineButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
+    // 友だち追加ボタンのクリックイベント
+    const purchaseButton = document.querySelector('.purchase-button');
+    if (purchaseButton) {
+        purchaseButton.addEventListener('click', function(e) {
             e.preventDefault();
             openLineApp();
-        });
-    });
-    
-    // Google Analytics用のイベント追跡（将来的に使用）
-    const ctaBox = document.querySelector('.cta-box');
-    if (ctaBox) {
-        ctaBox.addEventListener('click', function(e) {
-            // LINE友だち追加のコンバージョン追跡
+            
+            // Google Analytics用のイベント追跡（将来的に使用）
             if (typeof gtag !== 'undefined') {
                 gtag('event', 'line_friend_add_attempt', {
                     'event_category': 'engagement',
-                    'event_label': 'cta_click'
+                    'event_label': 'purchase_button_click'
                 });
             }
         });
     }
     
-    // スクロール位置によるCTAボックスのハイライト効果
-    window.addEventListener('scroll', function() {
-        const ctaBox = document.querySelector('.cta-box');
-        const scrollPosition = window.scrollY + window.innerHeight;
-        const ctaPosition = ctaBox.offsetTop;
-        
-        if (scrollPosition > ctaPosition + 100) {
-            ctaBox.style.transform = 'scale(1.02)';
-            ctaBox.style.boxShadow = '0 15px 40px rgba(6, 199, 85, 0.4)';
-        } else {
-            ctaBox.style.transform = 'scale(1)';
-            ctaBox.style.boxShadow = '0 10px 30px rgba(6, 199, 85, 0.3)';
-        }
-    });
-    
-    // モザイク部分をクリックした時の誘導
-    const blurredContent = document.querySelector('.content-blurred');
+    // ぼかしコンテンツクリック時の誘導
+    const blurredContent = document.querySelector('.blurred-content');
     if (blurredContent) {
         blurredContent.addEventListener('click', function() {
-            const ctaBox = document.querySelector('.cta-box');
-            ctaBox.scrollIntoView({ behavior: 'smooth' });
-            
-            // 軽いアニメーション効果
-            ctaBox.style.animation = 'pulse 1s ease-in-out';
-            setTimeout(() => {
-                ctaBox.style.animation = '';
-            }, 1000);
+            const paywall = document.querySelector('.paywall');
+            if (paywall) {
+                paywall.scrollIntoView({ behavior: 'smooth' });
+                
+                // 軽いアニメーション効果
+                paywall.style.animation = 'pulse 0.8s ease-in-out';
+                setTimeout(() => {
+                    paywall.style.animation = '';
+                }, 800);
+            }
         });
     }
 });
@@ -109,16 +76,20 @@ style.textContent = `
         100% { transform: scale(1); }
     }
     
-    .cta-box {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    .paywall {
+        transition: transform 0.3s ease;
     }
     
-    .content-blurred {
+    .blurred-content {
         cursor: pointer;
     }
     
-    .content-blurred:hover::after {
-        background: linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.9) 60%, rgba(255,255,255,0.98) 100%);
+    .blurred-content:hover .fade-overlay {
+        background: linear-gradient(to bottom, 
+            rgba(255,255,255,0) 0%, 
+            rgba(255,255,255,0.4) 30%, 
+            rgba(255,255,255,0.8) 70%,
+            rgba(255,255,255,1) 100%);
     }
 `;
 document.head.appendChild(style);
