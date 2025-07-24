@@ -7,114 +7,122 @@
 
 /* 基本設定 */
 body {
-    font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", -apple-system, sans-serif;
-    line-height: 1.8;
-    color: #333333;
-    background-color: #FFFFFF;
-    margin: 0;
-    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
 }
 
 /* コンテナ */
 .container {
     max-width: 680px;
     margin: 0 auto;
-    background-color: #FFFFFF;
+    background-color: white;
     min-height: 100vh;
-    padding: 0 40px;
 }
 
-/* ヘッダー - 削除 */
+/* ヘッダー */
 .header {
-    display: none;
+    padding: 20px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.article-title {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+    color: #212529;
+}
+
+.author-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.author-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #6c757d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.author-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.author-name {
+    font-weight: 500;
+    color: #495057;
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+
+.publish-date {
+    font-size: 14px;
+    color: #787c7e;
 }
 
 /* 記事 */
 .article {
-    padding: 60px 0 80px 0;
+    padding: 20px;
 }
 
-.article-header {
-    margin-bottom: 48px;
-    padding-bottom: 0;
-    border-bottom: none;
-}
-
-.article-title {
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 16px;
-    color: #333333;
-    line-height: 1.4;
-}
-
-.article-meta {
-    color: #787878;
-    font-size: 14px;
-    margin-bottom: 0;
-}
-
-.author {
-    display: none;
-}
-
-.date {
-    display: block;
-}
-
-/* 記事コンテンツ */
-.article-content {
-    position: relative;
-}
-
+/* コンテンツ */
 .content-visible {
-    margin-bottom: 2rem;
-}
-
-.content-visible h2 {
-    font-size: 24px;
-    margin: 40px 0 24px 0;
-    color: #333333;
-    border-left: 4px solid #1BB57C;
-    padding-left: 16px;
-    line-height: 1.4;
-}
-
-.content-visible h3 {
-    font-size: 1.2rem;
-    margin: 1.5rem 0 0.5rem 0;
-    color: #444;
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 40px;
 }
 
 .content-visible p {
-    margin-bottom: 24px;
+    margin-bottom: 1.5em;
     line-height: 1.8;
-    font-size: 18px;
-    color: #333333;
+    font-size: 17px;
+    color: #222222;
+}
+
+.content-visible h2 {
+    font-size: 26px;
+    font-weight: 700;
+    margin: 48px 0 24px 0;
+    color: #222222;
+    border-left: none;
+    padding-left: 0;
 }
 
 .content-visible ul, .content-visible ol {
-    margin: 24px 0 24px 32px;
-    font-size: 18px;
+    margin: 20px 0 20px 24px;
+    font-size: 17px;
 }
 
 .content-visible li {
     margin-bottom: 8px;
     line-height: 1.8;
+    font-size: 17px;
 }
 
 /* 警告ボックス */
 .warning-box {
-    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
-    color: white;
-    padding: 24px;
-    border-radius: 8px;
+    background: #FFF5F5;
+    color: #D73502;
+    border: 1px solid #FFE0E0;
+    border-radius: 4px;
+    padding: 20px;
     margin: 40px 0;
-    box-shadow: 0 5px 15px rgba(238, 90, 82, 0.3);
 }
 
 .warning-box p {
-    font-size: 18px;
+    font-size: 17px;
     font-weight: bold;
     margin-bottom: 16px;
     line-height: 1.6;
@@ -136,15 +144,16 @@ body {
     justify-content: space-around;
     margin: 40px 0;
     padding: 32px 24px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 8px;
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
     flex-wrap: wrap;
     gap: 16px;
 }
 
 .result-item {
     text-align: center;
-    color: white;
+    color: #212529;
     flex: 1;
     min-width: 150px;
 }
@@ -153,304 +162,114 @@ body {
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
-    color: #ffd700;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    color: #D73502;
 }
 
 .result-text {
     font-size: 0.9rem;
     line-height: 1.3;
+    color: #495057;
 }
 
-/* 比較ボックス */
-.comparison-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 2rem 0;
-    padding: 2rem;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    border-radius: 10px;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.comparison-item {
+/* ここから先は区切り */
+.blur-divider {
     text-align: center;
-    padding: 1.5rem;
-    border-radius: 8px;
-    flex: 1;
-    min-width: 200px;
+    color: #787c7e;
+    font-size: 14px;
+    margin: 60px 0 40px 0;
+    position: relative;
 }
 
-.comparison-item.old {
-    background-color: #ffebee;
-    border: 2px solid #f44336;
+/* 記事情報ボックス */
+.article-info-box {
+    background: #F7F7F7;
+    border-radius: 4px;
+    padding: 32px;
+    text-align: center;
+    margin-bottom: 24px;
 }
 
-.comparison-item.new {
-    background-color: #e8f5e8;
-    border: 2px solid #4caf50;
+.article-length {
+    font-size: 16px;
+    color: #787c7e;
+    margin-bottom: 24px;
 }
 
-.comparison-item h3 {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-    color: #333;
+/* CTAボタン - noteのスタイル */
+.cta-button {
+    background: #00B900;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 14px 40px;
+    font-size: 16px;
+    font-weight: 600;
+    display: inline-block;
+    text-decoration: none;
+    transition: opacity 0.2s;
 }
 
-.price {
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
+.cta-button:hover {
+    opacity: 0.8;
 }
 
-.comparison-item.old .price {
-    color: #f44336;
-}
-
-.comparison-item.new .price {
-    color: #4caf50;
-}
-
-.annual {
-    font-size: 0.9rem;
-    color: #666;
-}
-
-.comparison-arrow {
-    font-size: 2rem;
-    color: #41c9b4;
-    font-weight: bold;
+.cta-note {
+    font-size: 14px;
+    color: #787c7e;
+    margin-top: 16px;
+    line-height: 1.5;
 }
 
 /* ぼかし効果 */
 .blurred-content {
+    height: 200px;
     position: relative;
-    filter: blur(4px);
-    opacity: 0.3;
-    pointer-events: none;
-    user-select: none;
-    margin-bottom: 40px;
-}
-
-.blurred-content::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.9) 80%, rgba(255,255,255,1) 100%);
-}
-
-/* 旧スタイルとの互換性 */
-.content-blurred {
-    position: relative;
-    filter: blur(4px);
-    opacity: 0.3;
-    pointer-events: none;
-    user-select: none;
-    margin-bottom: 40px;
-}
-
-.content-blurred::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.9) 80%, rgba(255,255,255,1) 100%);
-}
-
-.content-blurred h2 {
-    font-size: 24px;
-    margin: 40px 0 24px 0;
-    color: #333333;
-    border-left: 4px solid #1BB57C;
-    padding-left: 16px;
-    line-height: 1.4;
-}
-
-.content-blurred h3 {
-    font-size: 1.2rem;
-    margin: 1.5rem 0 0.5rem 0;
-    color: #444;
-}
-
-.content-blurred p {
-    margin-bottom: 24px;
-    line-height: 1.8;
-    font-size: 18px;
-    color: #333333;
-}
-
-/* LINE登録誘導セクション */
-.line-cta-section {
-    position: relative;
-    margin-top: -20px;
-    padding: 40px 0;
-    background: #FFFFFF;
-    z-index: 10;
-}
-
-.cta-box {
-    background: linear-gradient(135deg, #06c755 0%, #05a245 100%);
-    color: white;
-    padding: 40px 32px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 8px 24px rgba(6, 199, 85, 0.25);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.cta-box h3 {
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 16px;
-    line-height: 1.4;
-}
-
-.cta-box > p {
-    font-size: 16px;
-    margin-bottom: 32px;
-    opacity: 0.95;
-    line-height: 1.6;
-}
-
-.cta-box h3 {
-    font-size: 1.6rem;
-    margin-bottom: 1rem;
-}
-
-.cta-box > p {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-    opacity: 0.95;
-}
-
-/* LINEボタン */
-.line-buttons {
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-    margin-bottom: 32px;
-    flex-wrap: wrap;
-}
-
-.line-btn, .qr-btn {
-    padding: 16px 32px;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    text-decoration: none;
-    display: inline-block;
-    min-width: 180px;
-}
-
-.line-btn.primary {
-    background-color: white;
-    color: #06c755;
-    border: 2px solid white;
-    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
-}
-
-.line-btn.primary:hover {
-    background-color: #f8f8f8;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.4);
-}
-
-.qr-btn {
-    background-color: transparent;
-    color: white;
-    border: 2px solid rgba(255, 255, 255, 0.8);
-}
-
-.qr-btn:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-color: white;
-    transform: translateY(-1px);
-}
-
-/* QRセクション */
-.qr-section {
-    margin-top: 24px;
-    padding: 24px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.qr-placeholder {
-    text-align: center;
-}
-
-.qr-code {
-    width: 160px;
-    height: 160px;
-    background-color: white;
-    margin: 16px auto;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #333;
-    font-weight: 600;
-    font-size: 14px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.qr-instruction {
-    font-size: 14px;
-    opacity: 0.9;
-    margin-top: 8px;
-    line-height: 1.5;
-}
-
-/* 特典リスト */
-.benefits {
-    margin-top: 32px;
-    padding-top: 32px;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.benefits h4 {
-    font-size: 20px;
-    font-weight: 700;
+    overflow: hidden;
     margin-bottom: 20px;
-    line-height: 1.4;
 }
 
-.benefits ul {
-    text-align: left;
-    max-width: 480px;
-    margin: 0 auto;
-    padding-left: 0;
-    list-style: none;
-}
-
-.benefits li {
-    margin-bottom: 12px;
-    font-size: 15px;
-    opacity: 0.95;
-    line-height: 1.6;
-    padding-left: 20px;
+.blurred-text {
+    filter: blur(2px);
+    user-select: none;
+    color: #999;
+    font-size: 17px;
+    line-height: 1.8;
+    padding: 0;
     position: relative;
+    z-index: 1;
 }
 
-.benefits li::before {
-    content: '✓';
+.blurred-text h2 {
+    font-size: 24px;
+    margin: 24px 0 12px 0;
+    color: #666;
+    border-left: none;
+    padding-left: 0;
+    line-height: 1.4;
+    font-weight: 700;
+}
+
+.blurred-text p {
+    margin-bottom: 1.5em;
+    line-height: 1.8;
+    font-size: 17px;
+    color: #999;
+}
+
+.fade-overlay {
     position: absolute;
+    top: 0;
     left: 0;
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 14px;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, 
+        rgba(255,255,255,0) 0%, 
+        rgba(255,255,255,0.3) 30%, 
+        rgba(255,255,255,0.7) 60%,
+        rgba(255,255,255,0.95) 85%,
+        rgba(255,255,255,1) 100%);
+    z-index: 2;
+    pointer-events: none;
 }
 
 /* フッター */
@@ -464,12 +283,12 @@ body {
 
 /* レスポンシブデザイン */
 @media (max-width: 768px) {
-    .container {
-        padding: 0 20px;
+    .header {
+        padding: 16px;
     }
     
     .article {
-        padding: 40px 0 60px 0;
+        padding: 16px;
     }
     
     .article-title {
@@ -477,94 +296,66 @@ body {
         line-height: 1.3;
     }
     
-    .content-visible p, .content-blurred p {
+    .content-visible p, .blurred-text p {
         font-size: 16px;
     }
     
-    .content-visible h2, .content-blurred h2 {
-        font-size: 20px;
-        margin: 32px 0 20px 0;
-        padding-left: 12px;
+    .content-visible h2, .blurred-text h2 {
+        font-size: 22px;
+        margin: 32px 0 16px 0;
     }
     
-    .cta-box {
-        padding: 32px 24px;
+    .blurred-content {
+        height: 180px;
     }
     
-    .cta-box h3 {
-        font-size: 20px;
+    .article-info-box {
+        padding: 24px;
     }
     
-    .warning-box {
-        padding: 1.5rem;
-    }
-    
-    .results-box {
-        flex-direction: column;
-        padding: 1.5rem;
-        gap: 1.5rem;
-    }
-    
-    .result-number {
-        font-size: 2rem;
-    }
-    
-    .comparison-box {
-        flex-direction: column;
-        padding: 1.5rem;
-    }
-    
-    .comparison-arrow {
-        transform: rotate(90deg);
-    }
-    
-    .cta-box {
-        padding: 2rem 1.5rem;
-    }
-    
-    .line-buttons {
-        flex-direction: column;
-        align-items: center;
-        gap: 12px;
-    }
-    
-    .line-btn, .qr-btn {
-        width: 100%;
-        max-width: 280px;
-        min-width: auto;
+    .cta-button {
+        font-size: 14px;
+        padding: 12px 32px;
     }
 }
 
 @media (max-width: 480px) {
-    .container {
-        padding: 0 20px;
+    .header {
+        padding: 12px;
     }
     
     .article {
-        padding: 32px 0 48px 0;
+        padding: 12px;
     }
     
     .article-title {
         font-size: 24px;
     }
     
-    .content-visible p, .content-blurred p {
-        font-size: 16px;
+    .author-avatar {
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
+    }
+    
+    .blurred-content {
+        height: 160px;
     }
     
     .warning-box {
-        padding: 20px;
+        padding: 16px;
     }
     
     .results-box {
-        padding: 24px 20px;
+        padding: 20px 16px;
     }
     
-    .cta-box {
-        padding: 28px 20px;
+    .article-info-box {
+        padding: 20px;
     }
     
-    .cta-box h3 {
-        font-size: 18px;
+    .cta-button {
+        font-size: 14px;
+        padding: 12px 24px;
     }
 }
